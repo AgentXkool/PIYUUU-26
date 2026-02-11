@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIYANSHI bbji ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 8px 32px 0 rgba(255, 107, 107, 0.2);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg-gradient);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Background */
+        .bg-heart {
+            position: absolute;
+            top: -10vh;
+            color: #ffb3c1;
+            font-size: 2rem;
+            z-index: -1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Main Card - Glassmorphism */
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 40px; /* Very rounded */
+            padding: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 90%;
+            width: 450px;
+            border: 2px solid #fff;
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: #c9184a;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 0px #ffe8f0;
+        }
+
+        p {
+            color: #590d22;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* Images & GIFs */
+        .gif-container {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gif-container img {
+            max-height: 100%;
+            max-width: 100%;
+            border-radius: 20px;
+            filter: drop-shadow(0 5px 15px rgba(255,77,109,0.3));
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-family: 'Fredoka One', cursive;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            background-color: #ff0a54;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-no {
+            background-color: #ffccd5;
+            color: #c9184a;
+        }
+        
+        .btn-no:hover {
+            background-color: #ffb3c1;
+        }
+
+        /* Menu Grid for Gifts */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gift-card {
+            background: white;
+            padding: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gift-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
+        }
+
+        .gift-emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Letter Styling */
+        .letter-scroll {
+            background: #fffdf5;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px dashed #ffcad4;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #4a4e69;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        /* Quiz Styling */
+        .quiz-opt {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            border: 2px solid #ffccd5;
+            background: white;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #590d22;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .quiz-opt:hover {
+            background: #fff0f3;
+            border-color: var(--primary);
+        }
+
+        .baby-img {
+            width: 100%;
+            border-radius: 25px;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Utility */
+        .hidden { display: none !important; }
+        
+        /* Custom Scrollbar for letter */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #ffb3c1; border-radius: 10px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="ask-page" class="card">
+        <div class="gif-container">
+            <img id="ask-gif" src="https://media.tenor.com/Eazcnx5O-bgAAAAM/dudu-dudu-cute.gif" alt="Cute Bear">
+        </div>
+        <h1 id="ask-text">Will you be my Valentine? 🌹</h1>
+        <div class="btn-group">
+            <button class="btn" id="yes-btn" onclick="handleYes()">YES! ❤️</button>
+            <button class="btn btn-no" id="no-btn" onmouseover="moveNo()" onclick="handleNo()">No 😢</button>
+        </div>
+    </div>
+
+    <div id="menu-page" class="card hidden">
+        <h1>YAYYY! 🎉</h1>
+        <p>I knew you'd say yes! (Eventually 😉)</p>
+        <div class="gif-container">
+            <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Happy Bear">
+        </div>
+        <p>Choose your gifts, my love:</p>
+        
+        <div class="gift-grid">
+            <div class="gift-card" onclick="startQuiz()">
+                <span class="gift-emoji">🎲</span>
+                <strong>GIFT 1</strong>
+            </div>
+            <div class="gift-card" onclick="showPage('letter-page')">
+                <span class="gift-emoji">💌</span>
+                <strong>GIFT 2</strong>
+            </div>
+            <div class="gift-card" onclick="showPage('baby-page')">
+                <span class="gift-emoji">😻</span>
+                <strong>GIFT 3 (fav wala)</strong>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz-page" class="card hidden">
+        <div class="gif-container">
+            <img src="https://media.tenor.com/lvd_VOW9MtQAAAAm/hehe.webp" alt="Thinking Bear">
+        </div>
+        <h2 id="q-text">Question 1</h2>
+        <div id="q-options"></div>
+        <button class="btn btn-no" onclick="showPage('menu-page')" style="margin-top: 15px; font-size: 14px; padding: 10px 20px;">Exit Quiz</button>
+    </div>
+
+    <div id="quiz-success" class="card hidden">
+        <div class="gif-container">
+            <img src="https://media.tenor.com/mxg1RwQmzQQAAAAm/peach-goma-love-pat-head-cheek.webp" alt="Love Bear">
+        </div>
+        <h1>LOVE YOU! ❤️</h1>
+        <p>You passed the vibe check perfectly.</p>
+        <button class="btn" onclick="showPage('menu-page')">Back to Gifts</button>
+    </div>
+
+    <div id="letter-page" class="card hidden">
+        <h1>To PRIYANSHI 🙃</h1>
+  <div class="letter-scroll">
+    <p><strong>Baby Ji,</strong></p>
+
+    <p>
+        Thank you for being my person. Truly… out of all the people in this world,
+        somehow life chose you for me, and I swear that’s the luckiest thing that has ever happened to me.
+    </p>
+
+    <p>
+        Yours is the only hand I would ever want to hold through every season of life —
+        when life is easy, when life is messy, when we’re laughing, and even when we’re crying.
+    </p>
+
+    <p>
+        You are the most beautiful girl I have ever met… but honestly, that’s my least favorite thing about you.
+        Your heart, your madness, your childishness, your silly jokes,
+        your drama, your attitude — that’s what made me fall in love with you.
+    </p>
+
+    <p>
+        I love your humor (even when it irritates me and I pretend to be angry).
+        I love how fast you get angry and show your insecurity and possessiveness —
+        I don’t know why, but it melts me every single time. Please never stop being that way.
+        It makes me feel wanted. It makes me feel like I’m yours.
+    </p>
+
+    <p>
+        And I am yours. Completely.
+    </p>
+
+    <p>
+        Long distance is sooo tough sometimes. Some days it actually hurts not being able to just hug you.
+        But I know the day I finally see you and run toward you… every second of this distance will suddenly feel worth it.
+    </p>
+
+    <p>
+        I just want to be with you. Kiss you. Hold you close. Carry you around. Annoy you.
+        Do all the silly things you like. I’d even watch <em>Splitsvilla</em> and play <em>Among Us</em> just for you 😭
+        Ise balidaan kehte h ok?!
+    </p>
+
+    <p>
+        You’re not just my girlfriend to me. You’re home.
+        The days we don’t talk feel dry and empty. My mind keeps searching for you in everything.
+        Every small win feels incomplete if I can’t tell you first.
+    </p>
+
+    <p>
+        I love you more than anything I have ever loved.
+        You are that <strong>“forever wala love”</strong> for me.
+        The one place where my ego fails me — I give in without fighting.
+    </p>
+
+    <p>
+        I don’t just want lambe lambe calls with you.
+        I want mornings with you. Fights with you.
+        Late nights, crazy parties. Random drives. A whole life with you.
+    </p>
+
+    <p>
+        UMMM...also
+        Little versions of you running around.
+        Because honestly… if two people this cute exist…
+        why shouldn’t we give the world beautiful children too?
+    </p>
+
+    <p>
+        Minimum 5 bache at least.
+        cricket team nhi toh basketball team hi ban jayegi yaar, unka bhi socho!
+        Imagine tiny yous with your eyes and attitude calling me papa…
+        I swear my heart can’t even handle that thought.
+    </p>
+
+    <p>
+        Priyanshi… stay with me forever.
+        Not just today. Not just Valentine’s.
+        Forever.
+    </p>
+
+    <p>
+        If there’s one thing I’m absolutely sure about in this world… it’s you.
+        Always you.
+    </p>
+
+    <p>
+        <strong>Will you be my Valentine… and my forever? 🌹❤️</strong>
+    </p>
+
+    <p>
+        Yours. Only yours. Always.
+    </p>
+  </div>
+
+        <br>
+        <button class="btn" onclick="showPage('menu-page')">Back to Gifts</button>
+    </div>
+
+    <div id="baby-page" class="card hidden">
+        <h1>see humari imaginary bachi!! 🥺</h1>
+        <div style="padding: 10px; background: white; border-radius: 30px; margin-bottom: 20px;">
+            <img src="baby.jpg" alt="Cute Baby" class="baby-img">
+        </div>
+        <p>I want this child so bad!! 😭</p>
+        <button class="btn" onclick="showPage('menu-page')">Back to Gifts</button>
+    </div>
+
+    <script>
+        // --- LOGIC FOR THE "NO" BUTTON (Cat with Gun) ---
+        let noClickCount = 0;
+        const noPhrases = [
+            "NO 😭",
+            "NO 😭",
+            "NO 😭",
+            "NO 😭",
+            "Just click YES! 😡"
+        ];
+
+        function handleNo() {
+            noClickCount++;
+            const yesBtn = document.getElementById('yes-btn');
+            const noBtn = document.getElementById('no-btn');
+            const gifImg = document.getElementById('ask-gif');
+            const mainText = document.getElementById('ask-text');
+
+            // 1. Make Yes button grow
+            const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
+            yesBtn.style.fontSize = (currentSize * 1.4) + 'px';
+            yesBtn.style.padding = (parseFloat(window.getComputedStyle(yesBtn).paddingTop) * 1.2) + 'px ' + (parseFloat(window.getComputedStyle(yesBtn).paddingRight) * 1.2) + 'px';
+
+            // 2. Change No text
+            noBtn.innerText = noPhrases[Math.min(noClickCount, noPhrases.length - 1)];
+
+            // 3. Change Image to Cat with Gun
+            gifImg.src = "https://media.tenor.com/WXgXHvt4BG0AAAAM/cat-gun.gif"; // Cat with gun GIF
+            
+            // 4. Change Header Text
+            mainText.innerText = "THINK AGAIN!! 🔫";
+        }
+
+        function handleYes() {
+            showPage('menu-page');
+            // Create confetti explosion effect (simple version)
+            for(let i=0; i<50; i++) createHeart();
+        }
+
+        // --- NAVIGATION ---
+        function showPage(pageId) {
+            document.querySelectorAll('.card').forEach(c => c.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        // --- QUIZ LOGIC ---
+        const questions = [
+            {
+                q: "Who is the boss here? 🤨",
+                a: [{t:"OBVIOUSLY YOU", c:false}, {t:"ME", c:false}, {t:"YOUR FATHER", c:true}]
+            },
+            {
+                q: "Stay with me forever? 🥺",
+                a: [{t:"NoNoNoNo", c:false}, {t:"NOPE SORRY VIBE KISI AUR SE MATCH HO GYI", c:false}, {t:"I GUESS WE CAN TRY...", c:true}]
+            },
+            {
+                q: "FREE FOR VALENTINE'S YA ENGAGEMENT HO GYI? 💍",
+                a: [{t:"YEessssSSSSS!!!!", c:true}, {t:"NOPE, Koi bauna MINING business wala mil gya", c:false}, {t:"Next year firse apply krna!", c:false}]
+            }
+        ];
+        
+        let qIndex = 0;
+
+        function startQuiz() {
+            qIndex = 0;
+            loadQuestion();
+            showPage('quiz-page');
+        }
+
+        function loadQuestion() {
+            const q = questions[qIndex];
+            document.getElementById('q-text').innerText = q.q;
+            const div = document.getElementById('q-options');
+            div.innerHTML = '';
+            
+            q.a.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-opt';
+                btn.innerText = opt.t;
+                btn.onclick = () => {
+                    if(opt.c) {
+                        qIndex++;
+                        if(qIndex < questions.length) loadQuestion();
+                        else showPage('quiz-success');
+                    } else {
+                        btn.style.background = '#ff000033';
+                        btn.style.borderColor = 'red';
+                        btn.innerText = "Wrong! 😤 Try again";
+                        // Shake effect
+                        btn.animate([
+                            { transform: 'translateX(0)' },
+                            { transform: 'translateX(-10px)' },
+                            { transform: 'translateX(10px)' },
+                            { transform: 'translateX(0)' }
+                        ], { duration: 400 });
+                    }
+                };
+                div.appendChild(btn);
+            });
+        }
+
+        // --- BACKGROUND ANIMATION ---
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('bg-heart');
+            heart.innerHTML = ['❤️','💖','🧸','🌹'][Math.floor(Math.random()*4)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 400);
+
+    </script>
+</body>
+</html>
